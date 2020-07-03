@@ -17,12 +17,13 @@ public:
 	string getServicio() {
 		return servicio;
 	}
-	int getNombre() {
-		return usuario;
+	string getNombre() {
+		return to_string(usuario);
 	}
 	int getTimestap() {
 		return timestamp;
 	}
+	void Imprimir(){}
 	/*bool operator == (int clave)    //DAMI, la sobrecargaa la que te referias era asi?
 	{
 		return ;

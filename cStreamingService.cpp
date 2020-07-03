@@ -189,7 +189,7 @@ SESION:
         cin >> x;
         switch (x) {
         case 1:
-            ListarCategoria<cPeliculas, cPeliculas>();
+            ListarCategoria<cPeliculas>();
             cout << "CATEGORIAS:" << endl;
             cout << "1. ACCION" << endl;
             cout << "2. AVENTURA" << endl;
@@ -203,7 +203,7 @@ SESION:
             switch (w) {
             case 1:
             {
-                ListarCategoria<cPeliculas, ePeliculas>(ePeliculas::accion);
+                ListarCategoria<cPeliculas>(ePeliculas::accion);
                 pair<long long, string> info = SELECCION();
                 long long timestamp = info.first;
                 string codigo = info.second;
@@ -213,31 +213,31 @@ SESION:
                 break;
             }
             case 2:
-                ListarCategoria<cPeliculas, ePeliculas>(ePeliculas::aventura);
+                ListarCategoria<cPeliculas>(ePeliculas::aventura);
                 SELECCION();
                 break;
             case 3:
-                ListarCategoria<cPeliculas, ePeliculas>(ePeliculas::comedia);
+                ListarCategoria<cPeliculas>(ePeliculas::comedia);
                 SELECCION();
                 break;
             case 4:
-                ListarCategoria<cPeliculas, ePeliculas>(ePeliculas::terror);
+                ListarCategoria<cPeliculas>(ePeliculas::terror);
                 SELECCION();
                 break;
             case 5:
-                ListarCategoria<cPeliculas, ePeliculas>(ePeliculas::misterio);
+                ListarCategoria<cPeliculas>(ePeliculas::misterio);
                 SELECCION();
                 break;
             case 6:
-                ListarCategoria<cPeliculas, ePeliculas>(ePeliculas::documental);
+                ListarCategoria<cPeliculas>(ePeliculas::documental);
                 SELECCION();
                 break;
             case 7:
-                ListarCategoria<cPeliculas, ePeliculas>(ePeliculas::amor);
+                ListarCategoria<cPeliculas>(ePeliculas::amor);
                 SELECCION();
                 break;
             case 8:
-                ListarCategoria<cPeliculas, ePeliculas>();
+                ListarCategoria<cPeliculas>();
                 SELECCION();
                 break;
             default:
@@ -245,7 +245,7 @@ SESION:
             }
             break;
         case 2:
-            ListarCategoria<cJuegos, cJuegos>();
+            ListarCategoria<cJuegos>();
             cout << "CATEGORIAS:" << endl;
             cout << "1. AUTOS" << endl;
             cout << "2. ARMAS" << endl;
@@ -256,27 +256,27 @@ SESION:
             cin >> w;
             switch (w) {
             case 1:
-                ListarCategoria<cJuegos, cJuegos>(eJuegos::autos);
+                ListarCategoria<cJuegos>(eJuegos::autos);
                 SELECCION();
                 break;
             case 2:
-                ListarCategoria<cJuegos, cJuegos>(eJuegos::armas);
+                ListarCategoria<cJuegos>(eJuegos::armas);
                 SELECCION();
                 break;
             case 3:
-                ListarCategoria<cJuegos, cJuegos>(eJuegos::multijugador);
+                ListarCategoria<cJuegos>(eJuegos::multijugador);
                 SELECCION();
                 break;
             case 4:
-                ListarCategoria<cJuegos, cJuegos>(eJuegos::ropa);
+                ListarCategoria<cJuegos>(eJuegos::ropa);
                 SELECCION();
                 break;
             case 5:
-                ListarCategoria<cJuegos, cJuegos>(eJuegos::deportes);
+                ListarCategoria<cJuegos>(eJuegos::deportes);
                 SELECCION();
                 break;
             case 6:
-                ListarCategoria<cJuegos, cJuegos>();
+                ListarCategoria<cJuegos>();
                 SELECCION();
                 break;
             default:
@@ -284,7 +284,7 @@ SESION:
             }
             break;
         case 3:
-            ListarCategoria<cAudio, cAudio>();
+            ListarCategoria<cAudio>();
             cout << "CATEGORIAS:" << endl;
             cout << "1. PODCAST" << endl;
             cout << "2. CANCION" << endl;
@@ -293,19 +293,19 @@ SESION:
             cin >> w;
             switch (w) {
             case 1:
-                ListarCategoria<cAudio, cAudio>(eAudio::podcast);
+                ListarCategoria<cAudio>(eAudio::podcast);
                 SELECCION();
                 break;
             case 2:
-                ListarCategoria<cAudio, cAudio>(eAudio::cancion);
+                ListarCategoria<cAudio>(eAudio::cancion);
                 SELECCION();
                 break;
             case 3:
-                ListarCategoria<cAudio, cAudio>(eAudio::audioLibro);
+                ListarCategoria<cAudio>(eAudio::audioLibro);
                 SELECCION();
                 break;
             case 4:
-                ListarCategoria<cAudio, cAudio>();
+                ListarCategoria<cAudio>();
                 SELECCION();
                 break;
             default:
