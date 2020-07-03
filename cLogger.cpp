@@ -106,7 +106,7 @@ double* cLogger::cantTiempoUsuario(int usuario) { //retorno un array del usauari
 
 	double arr[] = { 0,0,0 };
 	for (unsigned int i = 0;i < Logs.getCA();i++) {
-		if ((Logs.getItem(i))->getNombre() == usuario) {
+		if ((Logs.getItem(i))->getNombre() == to_string(usuario)) {
 			if (((Logs.getItem(i))->getServicio())[0] == 'P') {
 				arr[0] += (Logs.getItem(i))->getTimestap();
 			}

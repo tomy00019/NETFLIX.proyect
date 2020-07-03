@@ -58,13 +58,13 @@ public:
 	void ListarServicioNombreOrdenado() {
 		listaServicios.listarNombreOrdenado();
 	}
-	template<class T, class K, class U>
-	void ListarCategoria(U clave) {
-		listaServicios.listarCategoria<T, K>(clave);				
+	template<class Categoria,class Subcategoria>
+	void ListarCategoria(Subcategoria clave) {
+		listaServicios.listarCategoria<Categoria>(clave);
 	}
-	template<class T, class K>
+	template<class Categoria>
 	void ListarCategoria() {
-		listaServicios.listarCategoria<T>();
+		listaServicios.listarCategoria<Categoria>();
 	}
 
 
