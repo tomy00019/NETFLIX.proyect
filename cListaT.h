@@ -6,15 +6,6 @@
 #include <vector>
 #include <algorithm>
 
-#include "cAudio.h"
-#include "cPeliculas.h"
-#include "cJuegos.h"
-
-class cAudio;
-class cPeliculas;
-class cJuegos;
-
-
 using namespace std;
 template<class T>
 class cListaT
@@ -22,8 +13,6 @@ class cListaT
 protected:
 	T** vector;
 	unsigned int CA, TAM;
-
-	void Redimensionalizar();
 public:
 	cListaT(unsigned int TAM = NMAX);
 	~cListaT();
@@ -60,10 +49,6 @@ unsigned int cListaT<T>::getCA()
 	return CA;
 }
 
-template<class T>
-void cListaT<T>::Redimensionalizar()
-{
-}
 
 template<class T>
 cListaT<T>::cListaT(unsigned int TAM)
@@ -101,6 +86,7 @@ void cListaT<T>::listarLista()
 {
 	for (unsigned int i = 0; i < CA; i++)
 	{
+
 		vector[i]->Imprimir();
 	}
 }
@@ -114,7 +100,7 @@ bool cListaT<T>::AgregarItem(T* item)
 
 	if (CA < TAM)
 		vector[CA++] = item;
-	else throw new exception("No hay tama�o suficiente para agregar el item");;
+	else throw new exception("No hay tamaño suficiente para agregar el item");;
 	return true;
 }
 
@@ -215,6 +201,7 @@ unsigned int cListaT<T>::getItemPos(string clave)
 
 	return INT_MAX;
 }
+
 
 
 

@@ -11,10 +11,10 @@ class cUsuario: public cPersona
 	eCliente tipo;
 
 public:
-	cUsuario(eCliente tipo, string nombre, string apellido, string username, string pais, string contrasenia);
-	string to_String() { return to_StringPadre() + '\t' + to_string(tipo); }
+	cUsuario(eCliente tipo, string nombre, string apellido, string pais, string contrasenia);
+	virtual string to_String() { return to_String() + '\t' + to_string(tipo); }
 	eCliente getTipo() { return tipo; }
-	void Imprimir() { std::cout << to_String()<<endl; }
+	virtual void Imprimir() { std::cout << to_String()<<endl; }
 	~cUsuario() {};
 };
 

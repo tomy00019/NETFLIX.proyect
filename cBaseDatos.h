@@ -1,19 +1,20 @@
 #pragma once
 #include "cListaT.h"
 #include "cUsuario.h"
+#include "cLogger.h"
 
 class cUsuario;
-
+class cLogger;
 class cBaseDatos
 {
-	cListaT <cPersona> listaPersonas;  //creamos una lista de PERSONAS que tiene 
+	static cListaT <cPersona> listaPersonas;  //creamos una lista de PERSONAS que tiene 
 										//a los usuarios y a los administradores
 public:
 	cBaseDatos() {};
-	bool AgregarPersonas(cPersona* Persona) {
+	static bool AgregarPersonas(cPersona* Persona) {
 		return listaPersonas.AgregarItem(Persona);
 	}
-	float personasConectadas() {
+	static float personasConectadas() {
 		unsigned int cont = 0;
 		for (unsigned int i = 0; i < listaPersonas.getCA();i++) {
 			if ((*listaPersonas.getItem(i)).getOnline()) cont++;     //Busco la cantidad de personas que hay conectadas
@@ -22,20 +23,24 @@ public:
 		return ((cont * 100) / listaPersonas.getCA());
 	}
 
-	// METODOS 
-	/*bool QuitarPersonas(int Audio) {
-		return listaPersonas.QuitarenPos(Audio);
-	}*/
-	/*cAudio* QuitarPesonas(cAudio* Audio) {
-		return listaPersonas.Quitar(Audio);
+
+
+	static cPersona* BuscarPersona(string usuario) {
+		return listaPersonas.BuscarItem(usuario);
 	}
-	void EliminarPersonas(unsigned int pos) {
+	static bool QuitarPersonas(int pos) {
+		return listaPersonas.QuitarenPos(pos);
+	}
+	static cPersona* QuitarPesonas(cPersona* persona) {
+		return listaPersonas.Quitar(persona);
+	}
+	static void EliminarPersonas(unsigned int pos) {
 		listaPersonas.Eliminar(pos);
 	}
-	void ListarPersonas() {
+	static void ListarPersonas() {
 		listaPersonas.listarLista();
 	}
-	void ListarPersonasUsernameOrdenado() {
+	/*void ListarPersonasUsernameOrdenado() {
 		listaPersonas.listarNombreOrdenado();
 	}*/
 	~cBaseDatos() {};

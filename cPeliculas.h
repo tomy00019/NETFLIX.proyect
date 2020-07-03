@@ -8,15 +8,15 @@ enum ePeliculas { accion, aventura, comedia, terror, misterio, documental, amor 
 
 class cPeliculas: public cServicio
 {
-	int duracion;
 	static int cantPeliculas;
 	ePeliculas categoria;
 	string codigo;
 public:
-	cPeliculas(int tiempoDeUso, string nombre, ePeliculas categoria=accion, int duracion=0);
+	cPeliculas(int duracion=0, string nombre="", ePeliculas categoria=accion);
 	void record();
 	void fastFoward();
 	void backFoward();
+	string getCodigo() { return codigo; }
 
 	ePeliculas getTipo() { return categoria; }
 

@@ -38,7 +38,7 @@ void cListaServicios<T>::listarCategoria(U clave)	//se lista el tipo de servicio
 
 template<class T>
 template<class K>
-void cListaServicios<T>::listarCategoria()	//se lista el tipo de servicio  y la subcategoria
+void cListaServicios<T>::listarCategoria()	//se lista el tipo de servicio
 {
 	for (unsigned int i = 0; i < this->CA; i++)
 	{
@@ -50,9 +50,8 @@ void cListaServicios<T>::listarCategoria()	//se lista el tipo de servicio  y la 
 	}
 }
 
-//NO ME ANDA EL VIRTUAL!!!!
-template<class T>  //para mi el vector no scopea a los hijos correctamente, opcin de buscar otro contenedor o modificar la lsta directamente
-void cListaServicios<T>::listarNombreOrdenado() //muy ineficiente pero eficaz
+template<class T>
+void cListaServicios<T>::listarNombreOrdenado() 
 {
 	vector <T> buffer;
 	for (unsigned int i = 0; i < this->CA; i++)   //creamos un vector auxiliar (no se quiere modificar el vector original)
@@ -76,7 +75,7 @@ void cListaServicios<T>::listarNombreOrdenado() //muy ineficiente pero eficaz
 	}
 	
 	/*
-	
+	no funciona
 	for (unsigned int i = 0; i < buffer.size(); i++)
 	{
 		cJuegos* aux1 = dynamic_cast<cJuegos*>(&buffer[i]);

@@ -9,12 +9,12 @@ protected:
 	string username;
 	string pais;
 	string contrasenia;
-	long long id;
+	int id;
 	static int cantPersonas;
 	bool online;
 public:
-	cPersona(string nombre, string apellido, string username, string pais, string contrasenia);
-	string getNombre() { return nombre; }
+	cPersona(string nombre, string apellido,  string pais, string contrasenia);
+	string getNombre() { return username; }
 	bool getOnline() { return online;  }
 
 	bool compararContrasenia(string contrasenia) {
@@ -23,9 +23,11 @@ public:
 		}
 		return false;
 	}
-	string to_StringPadre(){
+	virtual string to_String(){
 		return nombre+ '\t' +apellido+ '\t' +username+ '\t' +pais+ '\t' +contrasenia+ '\t';
 	}
+	virtual void Imprimir() {};
+	int getID() { return id; }
 	~cPersona() { cantPersonas--; }
 };
 
