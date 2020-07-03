@@ -1,7 +1,7 @@
 #include "cJuegos.h"
 int cJuegos::cantJuegos = 0;
 //
-cJuegos::cJuegos(int tiempoDeUso, string nombre, eJuegos categoria) :cServicio(tiempoDeUso, nombre)
+cJuegos::cJuegos(int duracion, string nombre, eJuegos categoria) :cServicio(duracion, nombre)
 {
 	bool existeJuego = (categoria >= autos && categoria <= deportes);
 	if(!existeJuego)

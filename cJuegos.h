@@ -12,14 +12,14 @@ private:
 	eJuegos categoria;
 	static int cantJuegos;
 	string codigo;
-public:
-	cJuegos(int tiempoDeUso, string nombre,eJuegos categoria=autos);
+public://duracion en juegos es una aproximacion de la media en que se tarda en completar el Modo aventura
+	cJuegos(int duracion, string nombre,eJuegos categoria=autos);
 	void guardar();
 	void Comandos();
 	
 
 	eJuegos getTipo() { return categoria; }
-	
+	string getCodigo() { return codigo; }
 	void Imprimir();
 	virtual string to_String() { return cServicio::to_String() + '\t' + to_string(categoria); }
 

@@ -1,7 +1,7 @@
 #include "cAudio.h"
 int cAudio::cantAudios = 0;
 
-cAudio::cAudio(int tiempoDeUso, string nombre, eAudio categoria, int duracion) : cServicio(tiempoDeUso, nombre) {
+cAudio::cAudio(int duracion, string nombre, eAudio categoria) : cServicio(duracion, nombre) {
 	bool existe = (categoria >= podcast && categoria <= audioLibro);
 	if (!existe) {
 		throw new exception("NO ES UNA CATEGORIA CORRECTA");

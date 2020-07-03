@@ -1,14 +1,13 @@
 #include "cPeliculas.h"
 int cPeliculas::cantPeliculas = 0;
 
-cPeliculas::cPeliculas(int tiempoDeUso, string nombre, ePeliculas categoria, int duracion) :cServicio(tiempoDeUso, nombre)
+cPeliculas::cPeliculas(int duracion, string nombre, ePeliculas categoria) :cServicio(duracion, nombre)
 {
 	bool existePelicula = (categoria >= accion && categoria <= amor);
 	if(!existePelicula)
 	{
 		throw new exception("NO ES UNA CATEGORIA CORRECTA");
 	}
-	this->duracion = duracion;
 	this->categoria = categoria;
 	codigo = 'P' + cantPeliculas;
 	cantPeliculas++;

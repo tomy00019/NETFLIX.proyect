@@ -13,11 +13,12 @@ class cAudio: public cServicio
 	static int cantAudios;
 	string codigo;
 public:
-	cAudio(int tiempoDeUso, string nombre, eAudio categoria=cancion, int duracion=0);
+	cAudio(int duracion, string nombre, eAudio categoria=cancion);
 	void record();
 	void fastFoward();
 	void backFoward();
 	eAudio getTipo() { return categoria; }
+	string getCodigo() { return codigo; }
 	
 
 	void Imprimir();

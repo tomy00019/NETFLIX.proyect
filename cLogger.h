@@ -1,18 +1,19 @@
 #pragma once
 #include "cLog.h"
 #include "cListaT.h"
-#include "cUsuario.h"
+#include <string>
 #include <map>
 
-class cLog;
+using namespace std;
 
 class cLogger
 {
-	static cListaT <cLog> Logs;
+	static cListaT<cLog> Logs;
 public:
 	cLogger() {};
-	
-	static bool Registrar(double timestamp, int usuario, string servicio);
+
+	static bool Registrar(int timestamp, int usuario, string servicio);
+	static bool Registrar(cLog* log);
 	static string Masvistos();
 	static string Masjugados();
 	static string Masescuchados();
@@ -21,17 +22,10 @@ public:
 	static double CantTiempoJuegos();
 
 	static double* cantTiempoUsuario(int usuario);
-	
+
 	static unsigned int getCA() {
 		return Logs.getCA();
 	}
 
 	~cLogger() {};
 };
-
-
-//estoy inicializando bien las listas templates? 
-//falta convertir la plataforma en dinamica (estaticos con dinamicos NO!!!!)
-//TODOS LOS METODOS DEBENE SER STATICOS ACA?
-//yo tenia al vector logs y el getCA no dinamicos y no em permitia operar (ERROR)
-//cambiar los enums por enum class
